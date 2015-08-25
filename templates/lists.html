@@ -1,0 +1,16 @@
+<!-- TodoCtrl -->
+<div ng-controller="TodoIndexCtrl">
+	<div class="form-group">
+		<div class="well">
+	  	<h1>Lists</h1>
+			<p>{{todos.length}} Total Todos</p>
+			<button class="btn btn-default" ng-click="deleteAll()">Reset List</button>
+	  </div>
+		<ul class="list-unstyled">
+			<li ng-repeat="todo in todos">
+				{{todo.title}}
+				<button class="btn btn-danger" ng-click="delete(todo)">Delete</button>
+			</li>
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,27 @@
+<!-- TodoCtrl -->
+<div ng-controller="TodoIndexCtrl">
+	<div class="form-group">
+		<div class="well">
+	  	<h1>To-Do <small>List</small></h1>
+			<form role="form">
+	    	<input type="text" class="form-control" ng-model="newtodo"placeholder="Your Task" name="task" autofocus>
+			</form>
+			<button type="button" class="btn btn btn-primary" ng-click="addnew()">Add Todo No.{{todos.length+1}}</button>
+			<p>{{todos.length}} Total Todos</p>
+			<button class="btn btn-default" ng-click="deleteAll()">Reset List</button>
+	  </div>
+	  <h2 ng-pluralize count="todos.length"
+                 when="{'0': 'Add your first task.',
+                     'one': 'You got 1 task.',
+                     'other': 'You have {} things left to do.'}">
+		</h2>
+		<ul class="list-unstyled">
+			<li ng-repeat="todo in todos">
+				<input type="checkbox" >
+				{{todo.title}}
+				<button class="btn btn-warning">Edit</button>
+				<button class="btn btn-danger" ng-click="delete(todo)">Delete</button>
+			</li>
+		</ul>
+	</div>
+</div>
